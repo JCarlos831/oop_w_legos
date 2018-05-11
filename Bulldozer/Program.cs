@@ -4,40 +4,30 @@ namespace Bulldozer
 {
 	class MainClass
 	{
-		public static void Main(string[] args)
+		public static void Main (string[] args)
 		{
-			var worker = new FactoryWorker();
-			worker.Count(4);
-			worker.Count(5);
+			var worker = new FactoryWorker ();
+			var result = worker.AddNumbers(2, 3);
 
-			worker.Count(4.5f);
+			Console.WriteLine(result.ToString());
             
 		}
 	}
 
     public class FactoryWorker
 	{
-		public FactoryWorker(){
+		public FactoryWorker () {
 			
 		}
 
-		public void Count(int number){
-			if(Total == null)
-				Total = 0;
+		public int AddNumbers (int num1, int num2) {
+			var result = num1 + num2;
 
-			Total = Total + Convert.ToSingle(number);
-				Console.WriteLine(Total.ToString());
+			result = result + 100;
+			result = result - 100;
+
+			return result;
 		}
 
-		public void Count(float number){
-			Total = Total + number;
-			Console.WriteLine(Total.ToString());
-		}
-
-		public void Count(int num1, float num2, double num3){
-			
-		}
-
-		public float Total { get; set; }
 	}
 }
